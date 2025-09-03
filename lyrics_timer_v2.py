@@ -28,7 +28,7 @@ def read_lrc_file(lrc_path):
                     current_timestamp = mins * 60 + secs
                     
                     # Start new section if significant time gap (more than 4 seconds)
-                    if current_section and (current_timestamp - last_timestamp > 4.0):
+                    if current_section and ((current_timestamp - last_timestamp > 4.0) or len(current_section) >= 10):
                         if current_section:
                             sections.append(current_section)
                             current_section = []
@@ -75,7 +75,7 @@ def main():
     # Get input files
     mp3_file = get_valid_file_path("Enter the path to the MP3 file: ")
     lrc_file = get_valid_file_path("Enter the path to the input LRC file: ")
-    output_file = r"C:\Users\monfo\Downloads\maybenew\lyricsnew.lrc"
+    output_file = r"C:\Users\monfortel_asmilan\Downloads\LyricPrint\lyrics.lrc"
 
     try:
         # Get words and structure from LRC file

@@ -38,7 +38,7 @@ class LyricsSyncPlayer:
             typing_speed = 60.0 / (float(tempo) * 8)
             
             # Clamp the typing speed between 0.01 and 0.1 seconds
-            typing_speed = max(0.01, min(0.1, typing_speed)) -0.02
+            typing_speed = max(0.01, min(0.1, typing_speed)) -0.015
             
             print(f"🎵 Detected song BPM: {float(tempo):.1f}")
             print(f"⚡ Adjusted typing speed: {typing_speed:.3f} seconds per character")
